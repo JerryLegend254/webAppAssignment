@@ -1,0 +1,57 @@
+@import './styles.css';
+
+.recent{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3em;
+    width: 350px;
+}
+
+.category{
+    display: flex;
+}
+
+.catText{
+    margin-left: 1em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #67676D;
+
+}
+
+.recentInfos{
+    display: flex;
+}
+
+.recentInfo{
+    display: flex;
+    margin-right: 16px;
+}
+
+.infoText{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #67676D;
+    margin-left: 8px;
+
+}
+.titleText{
+    font-family: 'Inter', sans-serif;
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0%;
+}
+
+.recentImage{
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: 500px;
+    top: 80px;
+}
+
+.blogSvg{
+    margin-top: 20px;
+}
