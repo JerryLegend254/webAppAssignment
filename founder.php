@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once "partials/header.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/founder.css" />
-</head>
-
-<body>
-    <div class="navBar">
-        <div class="logoDiv">
-            <a href="./index.html">
-                <img class="logo" src="./images/logo.svg" alt="logo">
-            </a>
-        </div>
-        <div class="links">
-            <a href="./index.html">Home</a>
-            <a href="./founder.html">Founder</a>
-            <a href="./viewBlog.html">Blog</a>
-            <a href="./about.html">About Us</a>
-            <a href="./projects.html">Projects</a>
-            <a id="contact" href="./contactUs.html">Contact Us</a>
-            <a id="signUp" href="./signUp.html">Sign Up</a>
-        </div>
-    </div>
+?>
+ <link type="text/css" rel="stylesheet" href="css/founder.css" />
+<?php
+include_once "partials/navBar.php";
+?>
     <div class="main">
         <img class="founderSvg" src="./images/founderSvg.svg" alt="founder" />
         <p class="salutation">Hi! I Am Jeremy Okuto</p>

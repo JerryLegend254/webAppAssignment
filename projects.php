@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once "partials/header.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/projects.css" />
-</head>
+?>
+ <link type="text/css" rel="stylesheet" href="css/projects.css" />
+<?php
+include_once "partials/navBar.php";
+?>
 
-<body>
-    <div class="navBar">
-        <div class="logoDiv">
-            <a href="./index.html">
-                <img class="logo" src="./images/logo.svg" alt="logo">
-            </a>
-        </div>
-        <div class="links">
-            <a href="./index.html">Home</a>
-            <a href="./founder.html">Founder</a>
-            <a href="./viewBlog.html">Blog</a>
-            <a href="./about.html">About Us</a>
-            <a href="./projects.html">Projects</a>
-            <a id="contact" href="./contactUs.html">Contact Us</a>
-            <a id="signUp" href="./signUp.html">Sign Up</a>
-        </div>
-    </div>
     <div class="main">
         <p class="h1">PROJECTS</p>
         <div class="textDiv">
