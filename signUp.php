@@ -11,7 +11,7 @@ include_once "partials/navBar.php";
         <div class="signUpDiv">
             <p class="h5 formText">JOIN US</p>
             <p class="h1 formText">Create an Account <span>.</span></p>
-            <p class="h5 formText">Already have an account? <span><a href="signIn.php">Log In</a></span></p>
+            <p class="h5 formText">Already have an account? <span><a href="<?= ROOT_URL ?>signIn.php">Log In</a></span></p>
             <form>
                 <input type="text" id="Fname" placeholder="First name" />
                 <input type="text" id="Lname" placeholder="Last name" />

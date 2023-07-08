@@ -1,10 +1,19 @@
-body{
+html, body{
     margin: 0%;
+    padding: 0%;
 }
 .logo{
     width: 128px;
-    height: 42px;
+    height: 60px;
     border: none;
+    padding: 0%;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    align-items: center;
 }
 
 .navBar{
@@ -20,7 +29,7 @@ a{
 .navBar a{
     font-size: 1em;
     font-weight: 600;
-    padding: 8px;
+    padding: 6px;
     color: #130F31;
 }
 
@@ -31,7 +40,7 @@ a{
 
 #contact{
     border: 2px solid #EA4638;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border-radius: 8px;
 }
 
@@ -44,7 +53,7 @@ a{
 #signUp{
     background-color:#EA4638;
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 6px 12px;
     color: #ffffff;
     border: none;
 }
@@ -69,3 +78,21 @@ a{
         justify-content: center;
     }
 }
+
+
+.profilePic{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #130F31;
+}
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+
+  
