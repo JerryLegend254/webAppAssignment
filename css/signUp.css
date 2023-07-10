@@ -28,7 +28,7 @@ form input{
     margin-top: 2em;
     color: #F4F0F1;
 }
-form input[type="email"], input[type="password"]{
+form input[type="email"], input[type="password"], #username{
     width: 90%;
     
 }

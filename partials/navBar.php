@@ -1,5 +1,5 @@
 <?php
-require "config/db.php"
+require "config/dbConn.php";
 ?>
 </head>
 

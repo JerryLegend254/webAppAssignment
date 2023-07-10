@@ -1,17 +1,15 @@
 <?php
+require "constants.php"; 
 $servername = 'localhost';
 $username = 'root';
 $pass = '';
-$dbname = 'jeremyltd';
+$dbname = 'blog_db';
 
 
 $conn = new mysqli($servername, $username, $pass, $dbname);
 
 if($conn->connect_error){
-    die("Connection Failed" . $conn->connection_error);
-}
-else{
-    print "Connection Successful";
+    die("Connection Failed" . $conn->connect_error);
 }
 ?>
 
