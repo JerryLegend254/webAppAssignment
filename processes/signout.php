@@ -1,10 +1,10 @@
 <?php
-require "config/dbConn.php";
+require_once "../config/dbConn.php";
 
 
 if(isset($_SESSION["control"])){
     unset($_SESSION["control"]);
-    header("location:../");
+    header("location: ../signIn.php");
 
 }
 ?>
