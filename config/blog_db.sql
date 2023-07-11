@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2023 at 07:42 PM
+-- Generation Time: Jul 11, 2023 at 11:50 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 -- Database: `blog_db`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `article_tbl`
+--
+
+CREATE TABLE `article_tbl` (
+  `author_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `full_text` text DEFAULT NULL,
+  `publication_date` date DEFAULT current_timestamp(),
+  `is_final` tinyint(1) DEFAULT NULL,
+  `article_img` text NOT NULL,
+  `article_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `article_tbl`
+--
 -- --------------------------------------------------------
 
 --
@@ -47,6 +66,14 @@ INSERT INTO `author_tbl` (`author_id`, `full_name`, `email`, `username`, `passwo
 --
 
 --
+-- Indexes for table `article_tbl`
+--
+ALTER TABLE `article_tbl`
+  ADD PRIMARY KEY (`article_id`),
+  ADD UNIQUE KEY `article_img` (`article_img`) USING HASH,
+  ADD KEY `author_id` (`author_id`);
+
+--
 -- Indexes for table `author_tbl`
 --
 ALTER TABLE `author_tbl`
@@ -59,10 +86,26 @@ ALTER TABLE `author_tbl`
 --
 
 --
+-- AUTO_INCREMENT for table `article_tbl`
+--
+ALTER TABLE `article_tbl`
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `author_tbl`
 --
 ALTER TABLE `author_tbl`
   MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `article_tbl`
+--
+ALTER TABLE `article_tbl`
+  ADD CONSTRAINT `article_tbl_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `author_tbl` (`author_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
