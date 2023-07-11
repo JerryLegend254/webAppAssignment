@@ -38,7 +38,7 @@ a{
     border-bottom: 2px solid #130F31;
 }
 
-#contact{
+#contact, #post{
     border: 2px solid #EA4638;
     padding: 4px 8px;
     border-radius: 8px;

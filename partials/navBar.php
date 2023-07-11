@@ -18,6 +18,7 @@ require "config/dbConn.php";
         <a href="<?= ROOT_URL ?>projects.php">Projects</a>
         <a id="contact" href="<?= ROOT_URL ?>contactUs.php">Contact Us</a>
         <a id="signUp" href="<?= ROOT_URL ?>signUp.php">Sign Up</a>
+        <a id="post" href="<?= ROOT_URL ?>postBlog.php">Add Blog</a>
         <img class="avatar" src="./images/avatar.jpg" alt="avatar" />
 
     </div>

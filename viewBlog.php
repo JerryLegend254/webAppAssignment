@@ -5,10 +5,18 @@ include_once "partials/header.php";
 <link type="text/css" rel="stylesheet" href="css/blog.css" />
 <?php
 include_once "partials/navBar.php";
+if(isset($_GET['author'])){
+    session_start();
+    $_SESSION["currUser"] = $_GET['author'];
+}else{
+    $_SESSION["currUser"] = "null";
+}
+
 ?>
 
 
 <div class="main">
+    <p><?=$_SESSION["currUser"];?></p>
     <div class="featured">
         <p class="titleText">The best JavaScript Frameworks of 2023 so far.</p>
         <div class="category">

@@ -28,7 +28,7 @@ form input{
     margin-top: 2em;
     color: #F4F0F1;
 }
-form input[type="email"], input[type="password"], #username{
+form input[type="email"], input[type="password"], #username, #title, #blogContent{
     width: 90%;
     
 }
@@ -45,7 +45,7 @@ form input[type="email"], input[type="password"], #username{
     background-position: 95% center;    
 }
 
-form input::placeholder{
+form input::placeholder, #blogContent::placeholder{
     color: #F4F0F1;
     font: 0.75em 'Inter',sans-serif;
 
@@ -107,6 +107,16 @@ form{
 }
 span a{
     color: #EA4638;
+}
+
+#blogContent{
+    padding: 1em 2em;
+    background-color: #3F3D56;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    margin-top: 2em;
+    color: #F4F0F1;
 }
 @media (max-width: 950px){
     .content{
