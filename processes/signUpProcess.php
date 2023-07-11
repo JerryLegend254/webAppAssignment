@@ -26,7 +26,7 @@ if(isset($_POST["signup"])){
       header("Location: ../viewBlog.php");
       exit();
     } else {
-      echo "Error: " . $insert_user . "<br>" . $conn->error;
+      echo "Error: " . $insert_user . "<br>" . $conn->$error;
     }
 }
 ?>

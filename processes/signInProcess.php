@@ -12,6 +12,7 @@ if(isset($_POST["signin"])){
         $stored_password = $row_user["password"];
         $username = $row_user["username"];
         if(password_verify($entered_password, $stored_password)){
+            $_SESSION["control"]= $row_user;
             header("Location: ../viewBlog.php?status=loggedIn&author=$username");
             exit();
         }else{
