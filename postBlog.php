@@ -28,9 +28,9 @@ if(isset($_POST["addBlog"])){
     // $isFinal = $_POST['isFinal'];
     $isFinal = 1;
     $imageUrl = $_POST['postImage'];
-    $authorId = 1;
+    $authorname = $_SESSION['currUserName'];
 
-    $insert_blog = "INSERT INTO article_tbl (author_id, title, full_text, is_final, article_img) VALUES ('$authorId', '$title', '$blogContent', '$isFinal', '$imageUrl')";
+    $insert_blog = "INSERT INTO article_tbl (author_name, title, full_text, is_final, article_img) VALUES ('$authorname', '$title', '$blogContent', '$isFinal', '$imageUrl')";
     
     if ($conn->query($insert_blog) === TRUE) {
       header("Location: viewBlog.php");
@@ -49,7 +49,7 @@ if(isset($_POST["addBlog"])){
             <input type="text" id="title" name="title" placeholder="Title" />
             <textarea id="blogContent" name="blogContent" placeholder="Content..." rows="10" cols="70"></textarea>
             <input name="postImage" type="file" accept="image/*"/>
-            <div class="isFinalContainer"><input type="checkbox" id="isFinal" name="isFinal" value="isFinal">
+            <div class="isFinalContainer"><input type="checkbox" id="isFinal" name="isFinal" value="">
                 <label for="isFinal">Final</label><br>
             </div>
             <button name="addBlog" id="btn">ADD BLOG</button>

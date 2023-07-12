@@ -23,7 +23,7 @@ if(isset($_POST["signup"])){
     $insert_user = "INSERT INTO author_tbl (full_name, email, username, password) VALUES ('$fullname', '$email', '$username', '$hash_pass')";
     
     if ($conn->query($insert_user) === TRUE) {
-      header("Location: ../viewBlog.php");
+      header("Location: ../signIn.php");
       exit();
     } else {
       echo "Error: " . $insert_user . "<br>" . $conn->error;

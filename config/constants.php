@@ -1,3 +1,3 @@
 <?php
-define('ROOT_URL', 'http://localhost/webAppAssignment/');
+define('ROOT_URL', 'http://localhost/150463/assignment/');
 ?>

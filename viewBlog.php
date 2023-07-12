@@ -5,102 +5,100 @@ include_once "partials/header.php";
 <link type="text/css" rel="stylesheet" href="css/blog.css" />
 <?php
 include_once "partials/navBar.php";
-if(isset($_GET['author'])){
-    session_start();
-    $_SESSION["currUser"] = $_GET['author'];
-}else{
-    $_SESSION["currUser"] = "null";
-}
-
 ?>
 
 
 <div class="main">
-    <p><?=$_SESSION["currUser"];?></p>
-    <div class="featured">
-        <p class="titleText">The best JavaScript Frameworks of 2023 so far.</p>
-        <div class="category">
-            <img src="./images/line.svg" alt="line" />
-            <p class="catText">Web Development</p>
-        </div>
-        <p class="article">JavaScript is one of the most popular programming languages in the world. It is widely
-            used for building
-            websites, apps and games. It is also the programming language behind many of the world’s most popular
-            websites.</p>
-        <div class="featuredInfos">
-            <div class="featuredInfo">
-                <img src="./images/eye.svg" alt="eye" />
-                <p class="infoText">1245</p>
+
+
+    <?php
+    $spot_blog = "SELECT * ,DATE_FORMAT(publication_date, '%M %e, %Y') AS formatted_date FROM `article_tbl` ORDER BY article_id DESC LIMIT 1";
+    $blog_res = $conn->query($spot_blog);
+    $sn = 1;
+    if ($blog_res->num_rows > 0) {
+        // output data of each row
+        while ($blog_row = $blog_res->fetch_assoc()) {
+            $date = $blog_row['formatted_date'];
+
+    ?>
+            <div class="featured">
+                <p class="titleText"><?= $blog_row['title']; ?></p>
+                <div class="category">
+                    <img src="./images/line.svg" alt="line" />
+                    <p class="catText"><?= $blog_row['author_name']; ?></p>
+                </div>
+                <p class="article"><?= $blog_row['full_text']; ?></p>
+                <div class="featuredInfos">
+                    <div class="featuredInfo">
+                        <img src="./images/eye.svg" alt="eye" />
+                        <p class="infoText">12</p>
+                    </div>
+                    <div class="featuredInfo">
+                        <img src="./images/calender.svg" alt="calendar" />
+                        <p class="infoText"><?= $date ?></p>
+                    </div>
+                </div>
             </div>
-            <div class="featuredInfo">
-                <img src="./images/time.svg" alt="time" />
-                <p class="infoText">2 mins</p>
-            </div>
-            <div class="featuredInfo">
-                <img src="./images/calender.svg" alt="calendar" />
-                <p class="infoText">May 23, 2023</p>
-            </div>
-        </div>
-    </div>
 </div>
-<img class="featuredImage" src="./images/bestJsFrmwks.png" alt="best js frameworks" />
+<img class="featuredImage" src="./dbImages/<?= $blog_row['article_img']; ?>" alt="best js frameworks" />
+
+<?php
+        }
+    } else {
+        echo "0 results";
+    }
+
+?>
+
 <img class="blogSvg" src="./images/blogSvg.svg" alt="blog" />
 <img class="blogLogo" src="./images/BlogLogo.svg" alt="logo">
 
 <div class="otherBlogs">
-    
+
+
     <div class="blogs">
-    <div class="recentBlog"><p class="recentTitle"><span class="bolded">Recent </span><span>Blogs</span></p></div>
-        <div class="blog">
-            <img class="blogImg" src="./images/DeepDive.png" alt="blog photo" />
-            <div class="blogInfo">
-                <p class="blogBody">By choosing to outsource app development to the right company, you stand to get your app built by people who know...</p>
-                <div class="blogInfos">
-                    <div class="blogOtherInfo">
-                        <img src="./images/time.svg" alt="time" />
-                        <p class="otherInfoText">2 mins</p>
-                    </div>
-                    <div class="blogOtherInfo">
-                        <img src="./images/calender.svg" alt="calendar" />
-                        <p class="otherInfoText">July 7, 2023</p>
-                    </div>
-                </div>
-            </div>
+        <div class="recentBlog">
+            <p class="recentTitle"><span class="bolded">Recent </span><span>Blogs</span></p>
         </div>
+        <?php
 
-        <div class="blog">
-            <img class="blogImg" src="./images/BestApp.png" alt="blog photo" />
-            <div class="blogInfo">
-                <p class="blogBody">The best app development frameworks in 2023 are the ones that make app development faster and easier...</p>
-                <div class="blogInfos">
-                    <div class="blogOtherInfo">
-                        <img src="./images/time.svg" alt="time" />
-                        <p class="otherInfoText">23 mins</p>
-                    </div>
-                    <div class="blogOtherInfo">
-                        <img src="./images/calender.svg" alt="calendar" />
-                        <p class="otherInfoText">July 7, 2023</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        $spot_blog = "SELECT *,DATE_FORMAT(publication_date, '%M %e, %Y') AS formatted_date FROM article_tbl WHERE article_id < ( SELECT article_id FROM article_tbl ORDER BY article_id DESC LIMIT 1) ORDER BY article_id DESC LIMIT 3";
+        $blog_res = $conn->query($spot_blog);
+        
 
-        <div class="blog">
-            <img class="blogImg" src="./images/CloudComp.png" alt="blog photo" />
-            <div class="blogInfo">
-                <p class="blogBody">Cloud computing has revolutionized the way businesses develop and deploy applications. While all business small...</p>
-                <div class="blogInfos">
-                    <div class="blogOtherInfo">
-                        <img src="./images/time.svg" alt="time" />
-                        <p class="otherInfoText">2hrs 5mins</p>
-                    </div>
-                    <div class="blogOtherInfo">
-                        <img src="./images/calender.svg" alt="calendar" />
-                        <p class="otherInfoText">July 7, 2023</p>
+        $sn = 1;
+        if ($blog_res->num_rows > 0) {
+            // output data of each row
+            while ($blog_row = $blog_res->fetch_assoc()) {
+                $fdate = $blog_row['formatted_date'];
+
+
+        ?>
+                <div class="blog">
+                    <img class="blogImg" src="./dbImages/<?= $blog_row['article_img']; ?>" alt="blog photo" />
+                    <div class="blogInfo">
+                        <p class="blogBody"><?= $blog_row['full_text']; ?></p>
+                        <div class="blogInfos">
+                            <div class="blogOtherInfo">
+                                <img src="./images/darkprofile-fill.svg" alt="author" />
+                                <p class="otherInfoText"><?= $blog_row['author_name'] ?></p>
+                            </div>
+                            <div class="blogOtherInfo">
+                                <img src="./images/calender.svg" alt="calendar" />
+                                <p class="otherInfoText"><?= $fdate ?></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+        <?php
+            }
+        } else {
+            echo "0 results";
+        }
+
+        ?>
+
     </div>
 
 </div>
